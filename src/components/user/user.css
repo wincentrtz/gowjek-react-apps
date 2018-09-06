@@ -1,0 +1,59 @@
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  border-style: solid !important;
+}
+
+.justify-content-md-center {
+  width: 96%;
+}
+
+.gmnoprint {
+  display: none;
+}
+
+#destination {
+  top: 80% !important;
+  left: 55% !important;
+}
+
+#pickup {
+  top: 87% !important;
+  left: 55% !important;
+}
+
+.search {
+  margin: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: white !important;
+  padding: 10px !important;
+}
+
+.search-input {
+  margin: 0 !important;
+  border: none !important;
+}
+
+.col-5 {
+  position: absolute !important;
+}
+.searchbox {
+  position: absolute;
+  z-index: 99;
+  top: 70%;
+  left: 55%;
+}
+
+.input-group-text {
+  border: 0 !important;
+  background-color: white !important;
+}
+
+.btn-success {
+  border: none !important;
+  background-color: #8cbd47 !important;
+}

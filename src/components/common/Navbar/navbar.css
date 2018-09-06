@@ -1,0 +1,7 @@
+.navbar {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
