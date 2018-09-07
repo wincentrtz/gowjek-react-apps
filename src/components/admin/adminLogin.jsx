@@ -1,6 +1,8 @@
 import React from "react";
+import auth from "../../services/admin/authService";
 import Joi from "joi-browser";
 import Form from "../common/form";
+import { Redirect } from "react-router-dom";
 
 class AdminLogin extends Form {
   state = {
@@ -16,7 +18,24 @@ class AdminLogin extends Form {
       .required()
       .label("Password")
   };
+
+  doSubmit = async () => {
+    try {
+      const { data } = this.state;
+      await auth.adminLogin(data.username, data.password);
+      const { state } = this.props.location;
+      window.location = state ? state.from.pathname : "/admin";
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = ex.response.data;
+        this.setState({ errors });
+      }
+    }
+  };
+
   render() {
+    if (auth.getCurrentUser()) return <Redirect to="/admin" />;
     return (
       <div className="container">
         <h1>Login</h1>
