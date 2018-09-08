@@ -8,6 +8,11 @@ import DriverDashboard from "./components/driver/driverDashboard";
 import DriverLogin from "./components/driver/driverLogin";
 import UserDashboard from "./components/user/userDashboard";
 import UserLogin from "./components/user/userLogin";
+import AdminProtectedRoute from "./components/admin/adminProtectedRoute";
+import DriverRegister from "./components/driver/driverRegister";
+import DriverProtectedRoute from "./components/driver/driverProtectedRoute";
+import UserRegister from "./components/user/userRegister";
+import UserProtectedRoute from "./components/user/userProtectedRoute";
 
 class App extends Component {
   render() {
@@ -16,14 +21,15 @@ class App extends Component {
         <Switch>
           <Route path="/admin/register" component={AdminRegister} />
           <Route path="/admin/login" component={AdminLogin} />
+          <AdminProtectedRoute path="/admin" component={AdminDashboad} />
 
-          <Route path="/admin" component={AdminDashboad} />
-
+          <Route path="/driver/register" component={DriverRegister} />
           <Route path="/driver/login" component={DriverLogin} />
-          <Route path="/driver" component={DriverDashboard} />
+          <DriverProtectedRoute path="/driver" component={DriverDashboard} />
 
+          <Route path="/user/register" component={UserRegister} />
           <Route path="/user/login" component={UserLogin} />
-          <Route path="/user" component={UserDashboard} />
+          <UserProtectedRoute path="/user" component={UserDashboard} />
         </Switch>
       </React.Fragment>
     );

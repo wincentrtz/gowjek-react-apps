@@ -11,7 +11,6 @@ class UserOrder extends Component {
   }
   componentDidMount() {
     let self = this;
-    console.log(self);
     loadScript(
       "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyByH0c5bxYDZ48BLQ401BBsm4DppG6QNkQ&libraries=places",
       function() {
@@ -98,9 +97,9 @@ class UserOrder extends Component {
     return (
       <div>
         <div className="form-group searchbox col-5">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text">
                 <i style={{ color: "#8cbd47" }} className="fa fa-map-marker" />
               </span>
             </div>
@@ -111,9 +110,9 @@ class UserOrder extends Component {
               defaultValue="Jalan Anggrek Cakra No.1A, RT.4/RW.6, Kebon Jeruk, RT.1/RW.9, Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11540"
             />
           </div>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text">
                 <i style={{ color: "#edb541" }} className="fa fa-map-marker" />
               </span>
             </div>
